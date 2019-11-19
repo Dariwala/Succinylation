@@ -24,8 +24,8 @@ for line in dataset:
 
 X, y = data[:,:-1],data[:,-1]
 for pop in [5,80,100,150,200,250,300,350]:
-	for r in [3,19,11,1001]:
-		for no_of_folds in [6,8,10]:
+	for no_of_folds in [6,8,10]:
+		for r in [3,19,11,1001]:
 			accuracy = sensitivity = specificity = mcc = 0.0
 			kf = KFold(n_splits=no_of_folds,shuffle=True,random_state = r)
 			for train,test in kf.split(data):
